@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0b121a">
     <title>Caça ao Bug - Mapa de Mundos</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ estatico('style-mundos.css') }}">
+    <link rel="stylesheet" href="/static/style-mundos.css">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
         <!-- Mundo 1 -->
         <div class="mundo-secao" data-mundo="1" onclick="entrarMundo(1)">
             <div class="mundo-card">
-                <img src="{{ url_for('static', filename='ilha 1.png') }}" alt="Ilha 1" class="img-ilha">
+                <img src="/static/ilha 1.png" alt="Ilha 1" class="img-ilha">
                 <div class="conteudo-sobre-ilha">
                     <div class="tag-mundo">Mundo 1</div>
                     <h3>Floresta dos Loops</h3>
@@ -38,7 +38,7 @@
         <!-- Mundo 2 (Alterado para a ilha 2) -->
         <div class="mundo-secao bloqueado" data-mundo="2" onclick="entrarMundo(2)">
             <div class="mundo-card">
-                <img src="{{ url_for('static', filename='ilha 2.png') }}" alt="Ilha 2" class="img-ilha">
+                <img src="/static/ilha 2.png" alt="Ilha 2" class="img-ilha">
                 <div class="conteudo-sobre-ilha">
                     <div class="tag-mundo">Mundo 2</div>
                     <h3>Caverna das Decisões</h3>
@@ -51,7 +51,7 @@
         <!-- Mundo 3: mundo final do jogo -->
         <div class="mundo-secao bloqueado" data-mundo="3" onclick="entrarMundo(3)">
             <div class="mundo-card">
-                <img src="{{ url_for('static', filename='ilha 3.png') }}" alt="Ilha 3" class="img-ilha">
+                <img src="/static/ilha 3.png" alt="Ilha 3" class="img-ilha">
                 <div class="conteudo-sobre-ilha">
                     <div class="tag-mundo especial">Mundo 3 · Fase Final</div>
                     <h3>Laboratório de Funções</h3>
@@ -104,7 +104,7 @@
             if (secao.classList.contains('bloqueado')) return;
 
             if (MUNDOS_PRONTOS.includes(numero)) {
-                window.location.href = "/mundo/" + numero;
+                window.location.href = "/templates/mundo.html/" + numero;
             } else {
                 alert("Este mundo ainda está em construção. Em breve!");
             }
